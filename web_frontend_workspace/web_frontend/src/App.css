@@ -1,0 +1,233 @@
+:root {
+  --primary: #1976D2;
+  --secondary: #424242;
+  --accent: #FFC107;
+  --base-light: #fff;
+  --base-dark: #f5f7fb;
+  --text-color: #212121;
+  --text-secondary: #5a6672;
+  --border-color: #e6e6e6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color: var(--base-light);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--base-light);
+}
+
+.navbar {
+  background-color: var(--primary);
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-symbol {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.18;
+  margin: 0 0 0.1em 0;
+  color: var(--primary);
+}
+
+.description {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 30px auto;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.20s;
+  outline: none;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff !important;
+}
+
+.btn:hover, .btn-accent:hover {
+  background-color: #115293;
+}
+
+.btn-large {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+}
+
+/* Tic Tac Toe Specific */
+
+.ttt-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 0.5em;
+}
+
+.ttt-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ttt-board {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px 0 rgba(30,32,47,.05);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(240px, 62vw, 360px);
+  margin: 0 auto;
+  user-select: none;
+  outline: none;
+}
+
+.ttt-row {
+  display: flex;
+  width: 100%;
+}
+
+.ttt-square {
+  width: 90px;
+  height: 90px;
+  background: var(--base-light);
+  border: 2.5px solid var(--border-color);
+  outline: none;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.14s, background 0.16s, color 0.1s;
+  margin: 3px;
+  border-radius: 13px;
+  position: relative;
+}
+@media (max-width: 580px) {
+  .ttt-square {
+    width: 64px;
+    height: 64px;
+    font-size: 1.7rem;
+  }
+}
+
+.ttt-square:hover, .ttt-square:focus {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ttt-square.highlight {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--primary), 0 4px 20px 0 rgba(30,32,47,.06);
+  color: #fff;
+}
+
+.ttt-player-x {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.ttt-player-o {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.move-indicator {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+.ttt-info {
+  margin-top: 20px;
+  font-size: 1.22rem;
+  min-height: 1.3em;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.ttt-status-won {
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.ttt-status-draw {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.ttt-status-playing {
+  color: var(--secondary);
+}
+
+/* Extra responsive styles for mobile */
+@media (max-width: 500px) {
+  .container {
+    padding: 0 10px;
+  }
+  .ttt-board {
+    padding: 8px 2px;
+    width: 100%;
+    min-width: 200px;
+  }
+  .navbar {
+    padding: 10px 0;
+  }
+  .app {
+    font-size: 0.93em;
+  }
+}

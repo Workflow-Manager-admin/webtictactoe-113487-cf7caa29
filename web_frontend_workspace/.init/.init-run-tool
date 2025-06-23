@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/webtictactoe-113487-cf7caa29/web_frontend_workspace/web_frontend"
+}
